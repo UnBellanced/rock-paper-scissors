@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let getComputerChoice = () => {
+            let temp1 = Math.floor(Math.random()*3);
+            if(temp1 == 0){
+                return "rock";
+            }
+            else if (temp1==1){
+                return "paper";
+            }
+            else if(temp1==2){
+                return "scissors";
+            }
+            else {
+                return "something's wrong with the math.random calculation";
+            }
+        }
+
+        let gameRound = (playerSelection, computerSelection) => {
+            playerSelection = playerSelection.toLowerCase();
+
+            if(playerSelection=="rock"){
+                if(computerSelection=="rock"){
+                    return "Rock vs Rock! A draw!";
+                }
+                else if(computerSelection=="paper"){
+                    return "Rock vs Paper! Computer wins!";
+                }
+                else if(computerSelection=="scissors"){
+                    return "Rock vs Scissors! You win!";
+                }
+                else{
+                    return "Error! Something went wrong!";
+                }
+            }
+            else if(playerSelection=="paper"){
+                if(computerSelection=="paper"){
+                    return "Paper vs Paper! A draw!";
+                }
+                else if(computerSelection=="rock"){
+                    return "Paper vs Paper! You win!";
+                }
+                else if(computerSelection=="scissors"){
+                    return "Paper vs Scissors! Computer wins!";
+                }
+                else{
+                    return "Error! Something went wrong!";
+                }
+            }
+            else if(playerSelection=="scissors"){
+                if(computerSelection=="paper"){
+                    return "Scissors vs Paper! You win!";
+                }
+                else if(computerSelection=="rock"){
+                    return "Scissors vs Rock! Computer wins!";
+                }
+                else if(computerSelection=="scissors"){
+                    return "Scissors vs Scissors! A draw!";
+                }
+                else{
+                    return "Error! Something went wrong!";
+                }
+            }
+            else{
+                return "Error!! Something went wrong!";
+            }
+        }
+
+        let playGame = () => {
+            let playerScore = 0;
+            let computerScore = 0;
+            let userInput = "0";
+            for(let i=0; i<5; i++){
+                let userInput = prompt("Please type your choice: ", "Rock? Paper? Scissors? Type here!");
+                let roundEnd = gameRound(userInput, getComputerChoice());
+                console.log(roundEnd);
+                if(roundEnd.at(-2)=="n"){
+                    playerScore++;
+                }
+                else if(roundEnd.at(-2)=="s"){
+                    computerScore++;
+                }
+                console.log("Your score is: " + playerScore);
+                console.log("Computer Score is:" + computerScore);
+            }
+        }
+
+
+    </script>
+</body>
+</html>
