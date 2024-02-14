@@ -1,0 +1,35 @@
+
+body {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:100px;
+}
+#bigHeader {
+    font-size:50px;
+}
+#buttonHolder {
+
+}
+#rock {
+
+}
+#paper {
+
+}
+#scissors {
+
+}
+#results {
+
+}
+#scores {
+    display:flex;
+    gap:50px;
+}
+#playerScore {
+
+}
+computerScore {
+
+}
